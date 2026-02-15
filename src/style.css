@@ -1,0 +1,134 @@
+
+@import "tailwindcss";
+@font-face {
+  font-family: Alexandria;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/Alexandria-VariableFont_wght.ttf") format("woff2");
+}
+@theme {
+
+  /* --color-hover : #3949a4; */
+ 
+  --color-hover : rgba(57,73,164,.04);
+  --color-gradient : #5867c1;
+  --color-primary : #4151ab;
+  --color-secondary : #e3b618;
+  --color-primary-light : #f5c81e;
+  --color-back :#f8fafc;
+  --color-alertback-red : #fef2f2;
+  --color-alertText-red : #e9101a;
+  --color-alertIconback-red:#ffe2e2;
+  --color-black-500 : #697B7A;
+  --color-black-200 : #CED4D3;
+  --color-black-700 : #092724;
+  --color-black-100 : #F4F4F4;
+  --color-alertback-yellow : #fcf7e7;
+  --color-alertIconback-yellow : #f7eabe;
+  --color-alertText-yellow : #c8aa3e;
+  --color-success :#009689;
+  --color-success-light :#d3f4f1;
+
+  --color-light : rgba(0,0,0,.03);
+
+
+  --font-main: "Alexandria", sans-serif; 
+  --text-l : 16px;
+}
+
+
+:root {
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  line-height: 1.5;
+  /* font-weight: 400; */
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  
+}
+
+/* ::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 100px;
+} */
+/* ::-webkit-scrollbar-track{
+    background-color: var(--color-hover); 
+    border-radius: 100px;
+}
+::-webkit-scrollbar-thumb{
+    background-color:var(--color-primary);
+    border-radius: 100px;
+}  */
+
+html{
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100%;
+  background-color: var(--color-back);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+input:focus {
+    transition: .3s all;
+    outline-width : 1.5px ;
+    outline-color: var(--color-primary) !important;
+    color: var(--color-primary);
+}
+input{
+  caret-color: var(--color-secondary);
+}
+
+.validation-error{
+        border : 2px solid #ff6467 !important;
+        outline: 2px #ff6467 !important;
+    }
+    .validation-error  i{
+        color: #ff6467 !important;
+    }
+
+.dropdown-active{
+        animation: dropdown-active .2s linear forwards alternate;
+    }
+
+    .dropdown-unactive{
+        animation: dropdown-unactive .2s linear forwards alternate;
+    }
+
+    @keyframes dropdown-active {
+        from{
+            transform: translateY(-10px);
+            opacity: 0;
+        }to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes dropdown-unactive {
+        from{
+            transform: translateY(0);
+            opacity: 1;
+        }to{
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+    }

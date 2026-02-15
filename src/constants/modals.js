@@ -1,0 +1,17 @@
+export default {
+    FILTER_MODAL : 'filter-modal',
+    ADD_FILES_MODAL : 'add-files-modal',
+    ADD_STUDENT_MODAL : 'add-student-modal',
+    EDIT_STUDENT_MODAL : 'edit-student-modal',
+    ADD_DOCTOR_MODAL : 'add-doctor-modal',
+    EDIT_DOCTOR_MODAL : 'edit-doctor-modal',
+    ADD_DEPARTMENT_MODAL : 'add-department-modal',
+    EDIT_DEPARTMENT_MODAL : 'edit-department-modal',
+    ADD_SEMESTER_MODAL : 'add-semester-modal',
+    EDIT_SEMESTER_MODAL : 'edit-semester-modal',
+    COURSE_MODAL : 'course-modal',
+    DEGREE_REQUEST_DETAILS : 'degree_request_details',
+    REJECT_DEGREE_REQUEST : 'reject_degree_request',
+    FILE_REQUEST_DETAILS : 'file_request_details',
+    REJECT_FILE_REQUEST : 'reject_file_request',
+}
