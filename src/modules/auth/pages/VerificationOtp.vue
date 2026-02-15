@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { otpCodeHandler,loading } from '../services/otpCodeHandler';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
-import Title from '../components/title.vue';
+import Title from '../components/Title.vue';
 import Copyright from '../../core/components/Copyright.vue';
 import Logo from '../components/Logo.vue';
 import { useAuthStore } from '../../../stores/authStore';

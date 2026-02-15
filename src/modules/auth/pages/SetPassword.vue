@@ -3,7 +3,7 @@ import { useField, useForm } from 'vee-validate';
 import Copyright from '../../core/components/Copyright.vue';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
 import Logo from '../components/Logo.vue';
-import Title from '../components/title.vue';
+import Title from '../components/Title.vue';
 import { reactive, ref } from 'vue';
 import { useAuthStore } from '../../../stores/authStore';
 import { setPasswordShcema } from '../../../utils/validations/authValidations/setPasswordSchema';
