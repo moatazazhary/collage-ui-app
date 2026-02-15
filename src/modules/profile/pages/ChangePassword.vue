@@ -1,7 +1,7 @@
 <script setup>
 import { computed ,reactive} from 'vue';
 import usePasswordInputControl from '../../../composables/usePasswordInputControl';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
 
 import {useField,useForm} from 'vee-validate'

@@ -2,7 +2,7 @@
 import { onMounted, watch } from 'vue';
 import { useAuthStore } from '../../../stores/authStore';
 import { profileInfoSchema } from '../../../utils/validations/authValidations/profileInfoSchema';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import ErrorSpan from '../../core/components/ErrorSpan.vue';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
 import {useField, useForm} from 'vee-validate'

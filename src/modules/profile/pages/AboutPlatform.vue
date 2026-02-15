@@ -1,5 +1,5 @@
 <script setup >
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 
 </script>
 

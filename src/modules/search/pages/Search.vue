@@ -1,5 +1,5 @@
 <script setup >
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import SearchForm from '../components/SearchForm.vue';
 import SearchResult from '../components/SearchResult.vue';
 import { useFileStore } from '../../../stores/file.store';

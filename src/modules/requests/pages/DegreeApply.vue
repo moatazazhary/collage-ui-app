@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import Stepper from '../components/Stepper.vue';
 </script>
 

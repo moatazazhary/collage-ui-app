@@ -1,6 +1,6 @@
 <script setup >
 import { ref ,reactive, onMounted, computed} from 'vue';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import Modal from '../../core/components/Modal.vue';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
 import UploadingFile from '../components/UploadingFile.vue';

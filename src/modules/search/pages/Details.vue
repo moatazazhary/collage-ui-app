@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useFileStore } from '../../../stores/file.store';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import  UPLOAD_URL  from '../../../utils/helper';
 
 import { useRoute } from 'vue-router';

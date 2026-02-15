@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { useDegreeStore } from '../../../stores/degree.store';
 import { useFileStore } from '../../../stores/file.store';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import { useDropDown } from '../../../composables/useDropDown';
 const fileStore = useFileStore();
 const degreeStore = useDegreeStore();

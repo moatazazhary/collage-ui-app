@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { useCourseStore } from '../../../stores/course.store';
-import Title from '../../auth/components/title.vue';
+import Title from '../../auth/components/Title.vue';
 import CourseItem from '../components/CourseItem.vue';
 import Loading from '../../core/components/Loading.vue';
 
