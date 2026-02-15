@@ -7,7 +7,7 @@ import dropdownLists from '../../../constants/dropdownLists';
 import { useDropDown } from '../../../composables/useDropDown';
 import Modal from '../components/Modal.vue';
 import { useModalStore } from '../../../stores/modal.store';
-import Modals from '../../../constants/Modals';
+import Modals from '../../../constants/modals';
 import Loading from '../../core/components/Loading.vue';
 import { useDate } from '../../../composables/useDate';
 

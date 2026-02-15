@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import Modals from '../../../constants/Modals';
+import Modals from '../../../constants/modals';
 import { useModalStore } from '../../../stores/modal.store';
 import AddButton from '../components/AddButton.vue';
 import Modal from '../components/Modal.vue';

@@ -4,7 +4,7 @@ import Title from '../../auth/components/Title.vue';
 import Modal from '../../core/components/Modal.vue';
 import SubmitBtn from '../../core/components/SubmitBtn.vue';
 import UploadingFile from '../components/UploadingFile.vue';
-import modals from '../../../constants/Modals';
+import modals from '../../../constants/modals';
 import { useDropDown } from '../../../composables/useDropDown';
 import dropdownLists from '../../../constants/dropdownLists';
 import { useModalStore } from '../../../stores/modal.store';

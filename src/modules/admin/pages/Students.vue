@@ -9,7 +9,7 @@ import SectionTitle from '../components/SectionTitle.vue';
 
 import Papa from 'papaparse'
 import { useModalStore } from '../../../stores/modal.store';
-import Modals from '../../../constants/Modals';
+import Modals from '../../../constants/modals';
 import StudentForm from '../components/StudentForm.vue';
 import { useDropDown } from '../../../composables/useDropDown';
 import dropdownLists from '../../../constants/dropdownLists';

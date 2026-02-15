@@ -4,7 +4,7 @@ import { useDegreeStore } from '../../../stores/degree.store';
 import SectionTitle from '../components/SectionTitle.vue';
 import Modal from '../components/Modal.vue';
 import { useModalStore } from '../../../stores/modal.store';
-import Modals from '../../../constants/Modals';
+import Modals from '../../../constants/modals';
 import RequestNoteForm from '../components/RequestNoteForm.vue';
 import { useRoute } from 'vue-router';
 

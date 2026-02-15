@@ -3,6 +3,7 @@ import {  onMounted, ref} from 'vue';
 import SectionTitle from '../components/SectionTitle.vue';
 import { useDashboardStore } from '../../../stores/dashboard.store';
 import AxisChart from '../components/AxisChart.vue';
+import Loading from '../../core/components/Loading.vue';
 
 const dashboardStore = useDashboardStore();
 
@@ -45,58 +46,60 @@ onMounted(async()=>{
         </template>
     </SectionTitle>
 
-    <div class="mt-5 grid grid-cols-2 items-center gap-3 md:grid-cols-4">
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
-            <div class="flex items-center gap-3">
-                <i class="bx bx-user p-2 rounded-lg bg-alertback-yellow text-alertText-yellow"></i>
-                <h2 class="text-sm font-medium text-black-500">الطلاب</h2>
+    <Loading v-if="dashboardStore.loading"></Loading>
+    <div>
+        <div class="mt-5 grid grid-cols-2 items-center gap-3 md:grid-cols-4">
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
+                <div class="flex items-center gap-3">
+                    <i class="bx bx-user p-2 rounded-lg bg-alertback-yellow text-alertText-yellow"></i>
+                    <h2 class="text-sm font-medium text-black-500">الطلاب</h2>
+                </div>
+                <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.students}}</h3>
             </div>
-            <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.students}}</h3>
-        </div>
 
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
-            <div class="flex items-center gap-3">
-                <i class="bx bx-file-blank p-2 rounded-lg bg-alertback-red text-alertText-red"></i>
-                <h2 class="text-sm font-medium text-black-500">ملفات بإنتظار المراجعة</h2>
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
+                <div class="flex items-center gap-3">
+                    <i class="bx bx-file-blank p-2 rounded-lg bg-alertback-red text-alertText-red"></i>
+                    <h2 class="text-sm font-medium text-black-500">ملفات بإنتظار المراجعة</h2>
+                </div>
+                <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.pendingFiles}}</h3>
             </div>
-            <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.pendingFiles}}</h3>
-        </div>
 
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
-            <div class="flex items-center gap-3">
-                <i class="bx bx-book-open p-2 rounded-lg bg-success-light text-success"></i>
-                <h2 class="text-sm font-medium text-black-500">طلبات شهادات بإنتظار الموافقة</h2>
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
+                <div class="flex items-center gap-3">
+                    <i class="bx bx-book-open p-2 rounded-lg bg-success-light text-success"></i>
+                    <h2 class="text-sm font-medium text-black-500">طلبات شهادات بإنتظار الموافقة</h2>
+                </div>
+                <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.pendingDegrees}}</h3>
             </div>
-            <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.pendingDegrees}}</h3>
-        </div>
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
-            <div class="flex items-center gap-3">
-                <i class="bx bx-book p-2 rounded-lg bg-hover text-primary"></i>
-                <h2 class="text-sm font-medium text-black-500">إجمالي المحاضرات</h2>
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
+                <div class="flex items-center gap-3">
+                    <i class="bx bx-book p-2 rounded-lg bg-hover text-primary"></i>
+                    <h2 class="text-sm font-medium text-black-500">إجمالي المحاضرات</h2>
+                </div>
+                <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.lectures}}</h3>
             </div>
-            <h3 class="text-black-700 text-lg text-center mt-2 font-semibold">{{kpis?.lectures}}</h3>
         </div>
-    </div>
-
-    <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4 ">
-            <AxisChart v-if="filesStatusSummary" :background-colors="filesStatusSummary.backColors" :chart-title="filesStatusSummary.title" :chart-type="filesStatusSummary.type" :data="filesStatusSummary.data" :labels="filesStatusSummary.labels" ></AxisChart>
-        </div>
-
-        <div class="rounded-lg shadow-lg shadow-light bg-white p-4 ">
-            <AxisChart v-if="degreeStatusSummary" :background-colors="degreeStatusSummary.backColors" :chart-title="degreeStatusSummary.title" :chart-type="degreeStatusSummary.type" :data="degreeStatusSummary.data" :labels="degreeStatusSummary.labels" ></AxisChart>
-
-        </div>
-
-        <!-- <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
-        </div> -->
-
-        <!-- <canvas ref="canvas"></canvas> -->
-    </div>
-    <div class="mt-5 rounded-lg shadow-lg shadow-light bg-white p-4 ">
-            <AxisChart v-if="fileActivitySummary" :background-colors="fileActivitySummary.backColors" :chart-title="fileActivitySummary.title" :chart-type="fileActivitySummary.type" :data="fileActivitySummary.data" :labels="fileActivitySummary.labels" ></AxisChart>
-    </div>
     
+        <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4 ">
+                <AxisChart v-if="filesStatusSummary" :background-colors="filesStatusSummary.backColors" :chart-title="filesStatusSummary.title" :chart-type="filesStatusSummary.type" :data="filesStatusSummary.data" :labels="filesStatusSummary.labels" ></AxisChart>
+            </div>
+
+            <div class="rounded-lg shadow-lg shadow-light bg-white p-4 ">
+                <AxisChart v-if="degreeStatusSummary" :background-colors="degreeStatusSummary.backColors" :chart-title="degreeStatusSummary.title" :chart-type="degreeStatusSummary.type" :data="degreeStatusSummary.data" :labels="degreeStatusSummary.labels" ></AxisChart>
+
+            </div>
+
+            <!-- <div class="rounded-lg shadow-lg shadow-light bg-white p-4">
+            </div> -->
+
+            <!-- <canvas ref="canvas"></canvas> -->
+        </div>
+        <div class="mt-5 rounded-lg shadow-lg shadow-light bg-white p-4 ">
+                <AxisChart v-if="fileActivitySummary" :background-colors="fileActivitySummary.backColors" :chart-title="fileActivitySummary.title" :chart-type="fileActivitySummary.type" :data="fileActivitySummary.data" :labels="fileActivitySummary.labels" ></AxisChart>
+        </div>
+    </div>
 </template>
 
 <style>
