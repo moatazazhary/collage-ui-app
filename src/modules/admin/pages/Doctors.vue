@@ -7,7 +7,7 @@ import SectionTitle from '../components/SectionTitle.vue';
 import Modal from '../components/Modal.vue';
 import { useModalStore } from '../../../stores/modal.store';
 import Modals from '../../../constants/modals';
-import DoctorForm from '../components/doctorForm.vue';
+import DoctorForm from '../components/DoctorForm.vue';
 import { useDropDown } from '../../../composables/useDropDown';
 import dropdownLists from '../../../constants/dropdownLists';
 import Loading from '../../core/components/Loading.vue';
