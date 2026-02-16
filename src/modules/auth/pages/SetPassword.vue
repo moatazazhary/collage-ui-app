@@ -23,7 +23,7 @@ const {value:confirmPassword,errorMessage:confirmPasswordError} = useField('conf
 const {togglePassword,regester} = usePasswordInputControl()
 
 const onSubmit = handleSubmit(async (data)=>{
-    await auth.setPassword(auth.identifier,data.newPassword,data.confirmPassword);
+    await auth.setPassword(auth.userEmail,data.newPassword,data.confirmPassword);
 })
 
 
