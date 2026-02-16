@@ -70,14 +70,6 @@ export const useAuthStore = defineStore('auth',()=>{
     async function sendOTP(identy,email){
         try{
             loading.value = true
-            allowRoute('Verification')
-                router.push({
-                    name:'Verification',
-                    state:{allowed:true}
-                    });
-                    loading.value = false
-
-                    return;
             const response = await api.SendOTP(identy,email);
             if(response.data.success){
             
