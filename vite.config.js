@@ -16,7 +16,7 @@ export default defineConfig({
         name : "collage app",
         short_name : "كلية الإقتصاد",
         theme_color : "#4151ab",
-        background_color : "#4151ab",
+        background_color : "#f8fafc",
         orientation : "portrait",
         display:"fullscreen",
         start_url : '/',
