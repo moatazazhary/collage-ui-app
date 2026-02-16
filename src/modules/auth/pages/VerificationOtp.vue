@@ -90,7 +90,7 @@ onBeforeUnmount(()=>{
             </Title>
 
             <form @submit.prevent="otpCode()" class="mt-10">
-                <p class="text-l font-normal mt-1 text-black-500">لقد أرسلنا رمز التحقق إلى <strong class=" text-black-700">{{maskEmail(auth.identifier)}}</strong></p>
+                <p class="text-l font-normal mt-1 text-black-500">لقد أرسلنا رمز التحقق إلى <strong class=" text-black-700">{{maskEmail(auth.userEmail)}}</strong></p>
 
                 <div class="js-otp-inputs mt-10 flex items-center justify-center gap-1 flex-row md:justify-start">
                     <input  type="text" inputmode="numeric" pattern="[0-9]*"  maxlength="1" placeholder="-"  class=" w-14  h-14  text-l border-[1.5px] placeholder:text-xs border-black-100 text-center rounded-2xl text-gray-400 ">
