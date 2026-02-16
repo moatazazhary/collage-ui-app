@@ -36,7 +36,7 @@ async function otpCode(){
         return ;
     }
     loading.value = false;
-    await auth.verifyOTP(parseInt(values),auth.identifier);
+    await auth.verifyOTP(parseInt(values),auth.userEmail);
 }
 
 function maskEmail(email){
@@ -68,6 +68,13 @@ onMounted(()=>{
 
 })
 
+async function sendOtp(){
+
+    const identifier = auth.identifier.includes('@') ? '' : auth.identifier;
+    await auth.sendOTP(identifier,auth.userEmail);
+    timeLeft.value = 60*5
+}
+
 onBeforeUnmount(()=>{
     clearInterval(interval);
 })
@@ -98,6 +105,7 @@ onBeforeUnmount(()=>{
                 <div class="text-xs flex items-center gap-2 font-normal mt-10">
                     <span class="text-secondary font-medium text-l">{{formatedTime}}</span>
                     <button class="text-black-500 outline-none border-none">إعادة إرسال الرمز ؟</button>
+                    <button type="button" v-if="timeLeft <= 0" @click="sendOtp" class="text-primary cursor-pointer font-bold underline outline-none border-none">إرسال</button>
                 </div>
 
                 <div class="mt-10">

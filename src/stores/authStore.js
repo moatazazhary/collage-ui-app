@@ -14,6 +14,7 @@ export const useAuthStore = defineStore('auth',()=>{
     const isDoctor = ref(false);
     const isStudent = ref(false);
     const identifier = ref('');
+    const userEmail = ref('');
     const router = useRouter();
     const allowRoutes = reactive(new Set());
 
@@ -69,11 +70,19 @@ export const useAuthStore = defineStore('auth',()=>{
     async function sendOTP(identy,email){
         try{
             loading.value = true
+            allowRoute('Verification')
+                router.push({
+                    name:'Verification',
+                    state:{allowed:true}
+                    });
+                    loading.value = false
+
+                    return;
             const response = await api.SendOTP(identy,email);
             if(response.data.success){
             
                 loading.value = false;
-                identifier.value = response.data.email
+                userEmail.value = response.data.email
                 allowRoute('Verification')
                 router.push({
                     name:'Verification',
@@ -103,7 +112,7 @@ export const useAuthStore = defineStore('auth',()=>{
             if(response.data.success){
 
                 loading.value = false;
-                identifier.value = response.data.email
+                userEmail.value = response.data.email
                 allowRoute('Set Password')
                 router.push({
                     name:'Set Password',
@@ -132,6 +141,7 @@ export const useAuthStore = defineStore('auth',()=>{
             if(response.data.success){
                 loading.value = false;
                 identifier.value = '';
+                userEmail.value = '';
                 useAlertStore().successMessage(response.data.message)
                 router.replace('/login');
 
@@ -255,6 +265,6 @@ export const useAuthStore = defineStore('auth',()=>{
         return allowed;
     }
 
-    return {user,isLoggedIn,isAdmin,isStudent,identifier,isDoctor,loading,sessionChecked,getCurrentIdentifier,allowRoute,consumeRoute,setPassword,logout,verifyOTP,checkSession,login,sendOTP,changePassword}
+    return {user,isLoggedIn,isAdmin,isStudent,userEmail,identifier,isDoctor,loading,sessionChecked,getCurrentIdentifier,allowRoute,consumeRoute,setPassword,logout,verifyOTP,checkSession,login,sendOTP,changePassword}
 
 })
